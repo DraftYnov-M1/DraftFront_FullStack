@@ -1,22 +1,31 @@
 .wrapper {
     display: flex;
-    border: 1px solid grey;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--color-search);
     padding: 10px;
-    border-radius: 4px;
+    border-radius: 20px;
+    width: 120px;
     position: relative;
+
+    .input {
+        width: 50%;
+    }
+
+    svg {
+        width: 20px;
+    }
+
+    input {
+        border: none;
+    }
+
+    input:focus {
+        outline: none;
+    }
 }
 
-.wrapper svg{
-    width: 20px;
-    margin-right: 10px;
-}
 
-.wrapper input {
-    border: none;
-}
-.wrapper input:focus {
-    outline: none;
-}
 .results {
     position: absolute;
     max-height: 150px;
