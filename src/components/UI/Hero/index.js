@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import TitleMain from "@/components/UI/TitleMain";
 import SubTitle from "@/components/UI/SubTitle";
 import Link from "next/link";
-import Image from "next/image";
 import styles from "./index.module.scss";
 
 const Hero = ({ subtitle, title, image, buttonLink, buttonText }) => {
