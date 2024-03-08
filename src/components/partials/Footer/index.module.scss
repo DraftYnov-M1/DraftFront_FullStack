@@ -1,0 +1,25 @@
+.footer__main {
+    
+
+
+    .footer__bar {
+        border: 1px solid var(--main-color);
+        // margin: 20px;
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+        .wrapper p {
+            font-size: 17px;
+            color: var(--secondary-color);
+        }
+    
+    }
+}
+

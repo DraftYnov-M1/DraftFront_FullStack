@@ -1,5 +1,6 @@
-import Header from '@/components/partials/Header';
 import { Syne, Poppins } from 'next/font/google';
+import Header from '@/components/partials/Header';
+import Footer from '@/components/partials/Footer';
 import '@/assets/styles/globals.scss';
 
 // const syne = Syne({ subsets: ['latin'] })
@@ -18,7 +19,7 @@ export default function RootLayout({ children }) {
         <main>
           {children}
         </main>
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   )

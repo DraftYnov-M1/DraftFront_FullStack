@@ -87,7 +87,7 @@ export default async function Home() {
     //     articles && <GridPosts articles={articles.data.getArticles} />
     //   }
     // </div>
-    <div style={{height: "3000px"}}>
+    <div className="container" style={{height: "3000px"}}>
       <Hero
         subtitle="We talk about"
         title="Cloud computing"

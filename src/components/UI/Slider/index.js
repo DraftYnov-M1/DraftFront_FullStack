@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from "react";
+import sliderImage1 from "@/assets/img/slider1.svg";
 import styles from "./index.module.scss";
 
 const Index = () => {
@@ -30,20 +31,24 @@ const Index = () => {
                 onMouseMove={(e) => { console.log("je bouge la souris") }}
                 onMouseUp={(e) => { console.log("je relache le clique") }}
             >
-            <div className={styles.slider} style={{transform: `translateX(${translateValue}px)`}}>
-                <div data-index="1" className={styles.slide}>  
+                <div className={styles.slider} style={{transform: `translateX(${translateValue}px)`}}>
+                    <div data-index="1" className={styles.slide}>   
+                        <img src={sliderImage1.src} alt="Slider 1" />
+                    </div>
+                    <div data-index="2" className={styles.slide}>
+                    </div>
+                    <div data-index="3" className={styles.slide}>
+                    </div>
+                    <div data-index="4" className={styles.slide}>
+                    </div>
                 </div>
-                <div data-index="2" className={styles.slide}>
-                </div>
-                <div data-index="3" className={styles.slide}>
-                </div>
-                <div data-index="4" className={styles.slide}>
-                </div>
-            </div>
             </div>
             <div className={styles.navigation}>
-                <button onClick={(()=>{getPrevSlide()} )}>prev</button>
-                <button onClick={()=>getNextSlide()}>next</button>
+                <ul className={styles.navigation__item}>
+                    <button onClick={()=>getPrevSlide()} />
+                    <button />
+                    <button  onClick={()=>getNextSlide()} />
+                </ul>
             </div>
         </>
     );
