@@ -1,9 +1,8 @@
 import Header from '@/components/partials/Header';
 import { Syne, Poppins } from 'next/font/google';
 import '@/assets/styles/globals.scss';
-import Hero from '@/components/UI/Hero';
 
-const syne = Syne({ subsets: ['latin'] })
+// const syne = Syne({ subsets: ['latin'] })
 const poppins = Poppins(
   { 
     subsets: ['latin'],
@@ -14,9 +13,8 @@ const poppins = Poppins(
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${syne.className}`}>
+      <body className={`${poppins.className}`}>
         <Header />
-        <Hero />
         <main>
           {children}
         </main>
