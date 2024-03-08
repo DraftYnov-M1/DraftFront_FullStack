@@ -1,13 +1,21 @@
 .wrapper {
     overflow: hidden;
-    width: 500px;
+    border-radius: 200px;
+    width: 300px;
+    margin: 50px auto;
 }
 
 .slider {
     display: flex;
-    transition: 0.5s;
+    gap: 50px;
+    position: relative;
+    width: 100%;
+    width: 3000px;
+    transition: 0.3s all;
 }
 
 .slide {
-    
+    width: 500px;
+    height: 500px;
+    background: lightgray;
 }

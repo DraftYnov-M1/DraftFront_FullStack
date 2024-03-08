@@ -28,7 +28,7 @@ const Hero = ({ subtitle, title, image, buttonLink, buttonText }) => {
       <div className={styles.content}>
         <SubTitle text="We talk about" color="white" />
         <TitleMain title="Cloud Computing" color="white" />
-        <Link href={buttonLink}>{buttonText}</Link>
+        <Link className="btn btn__primary" href={buttonLink}>{buttonText}</Link>
       </div>
       <div className={styles.overlay}></div>
       <div className={styles.frame}>

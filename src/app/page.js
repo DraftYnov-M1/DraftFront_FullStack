@@ -3,6 +3,7 @@ import GridPosts from "@/components/UI/GridPosts";
 import { GET_ARTICLES } from "@/graphql/queries";
 import Hero from "@/components/UI/Hero";
 import backgroundImage from '../../public/bg.png';
+import Slider from "@/components/UI/Slider";
 
 export default async function Home() {
 
@@ -94,6 +95,7 @@ export default async function Home() {
         buttonLink="/"
         buttonText="Discover"
       />
+      <Slider />
     </div>
 
   )
