@@ -1,7 +1,8 @@
-import TitlePage from "@/components/UI/TitlePage";
+
 import GridPosts from "@/components/UI/GridPosts";
 import { GET_ARTICLES } from "@/graphql/queries";
 import Hero from "@/components/UI/Hero";
+import backgroundImage from '../../public/bg.png';
 
 export default async function Home() {
 
@@ -85,8 +86,14 @@ export default async function Home() {
     //     articles && <GridPosts articles={articles.data.getArticles} />
     //   }
     // </div>
-    <div>
-      <Hero />
+    <div style={{height: "3000px"}}>
+      <Hero
+        subtitle="We talk about"
+        title="Cloud computing"
+        image={backgroundImage.src}
+        buttonLink="/"
+        buttonText="Discover"
+      />
     </div>
 
   )
