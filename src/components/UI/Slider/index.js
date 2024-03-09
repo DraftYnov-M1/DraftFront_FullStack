@@ -36,10 +36,13 @@ const Index = () => {
                         <img src={sliderImage1.src} alt="Slider 1" />
                     </div>
                     <div data-index="2" className={styles.slide}>
+                        <img src={sliderImage1.src} alt="Slider 1" />
                     </div>
                     <div data-index="3" className={styles.slide}>
+                        <img src={sliderImage1.src} alt="Slider 1" />
                     </div>
                     <div data-index="4" className={styles.slide}>
+                        <img src={sliderImage1.src} alt="Slider 1" />
                     </div>
                 </div>
             </div>

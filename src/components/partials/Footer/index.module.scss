@@ -20,6 +20,15 @@
             color: var(--secondary-color);
         }
     
+        .wrapper__left {
+            // width: 20%;
+        }
+
+        .wrapper__right {
+            width: 49%;
+            display: flex;
+            justify-content: flex-end;
+        }
     }
 }
 

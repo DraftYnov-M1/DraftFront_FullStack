@@ -1,0 +1,31 @@
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px;
+
+    .wrapper__left {
+        width: 33.33%;
+
+        .bottomHero__text {
+            font-size: 17px;
+            font-weight: 400;
+            text-align: justify;
+            line-height: 25.5px;
+            color: var(--secondary-color);
+            margin: 40px 0px;
+        }
+
+        .bottomHero__bar {
+            border: 5px solid var(--main-color);
+            margin: 40px 0px;
+            width: 30%;
+        }
+    }
+
+    .wrapper__right {
+        width:20%;
+       
+    }
+
+}

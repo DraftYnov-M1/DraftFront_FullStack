@@ -4,6 +4,7 @@ import { GET_ARTICLES } from "@/graphql/queries";
 import Hero from "@/components/UI/Hero";
 import backgroundImage from '../../public/bg.png';
 import Slider from "@/components/UI/Slider";
+import BottomHero from "@/components/UI/BottomHero";
 
 export default async function Home() {
 
@@ -87,7 +88,7 @@ export default async function Home() {
     //     articles && <GridPosts articles={articles.data.getArticles} />
     //   }
     // </div>
-    <div className="container" style={{height: "3000px"}}>
+    <div className="container" style={{height: "2000px"}}>
       <Hero
         subtitle="We talk about"
         title="Cloud computing"
@@ -95,7 +96,11 @@ export default async function Home() {
         buttonLink="/"
         buttonText="Discover"
       />
-      <Slider />
+      <BottomHero 
+        buttonLink="/"
+        buttonText="About us"
+      />
+      {/* <Slider /> */}
     </div>
 
   )
