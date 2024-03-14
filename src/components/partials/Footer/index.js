@@ -3,7 +3,7 @@ import styles from "./index.module.scss";
 
 const Footer = () => {
   return (
-    <footer className={styles.footer__main}>
+    <footer className={`${styles.footer__main} container`}  >
         <div className={styles.footer__bar} />
         <div className={styles.wrapper}>
           <div className={styles.wrapper__left}>

@@ -84,9 +84,6 @@ export default async function Home() {
   return (
     // <div className="container">
     //   <TitlePage title="Accueil" />
-    //   {
-    //     articles && <GridPosts articles={articles.data.getArticles} />
-    //   }
     // </div>
     <div className="container" style={{height: "2000px"}}>
       <Hero
@@ -96,6 +93,9 @@ export default async function Home() {
         buttonLink="/"
         buttonText="Discover"
       />
+        {
+           articles && <GridPosts articles={articles.data.getArticles} />
+        }
       <BottomHero 
         buttonLink="/"
         buttonText="About us"
