@@ -1,8 +1,10 @@
-.wrapper {
+.wrapper__slider {
     overflow: hidden;
     border-radius: 200px;
-    width: 300px;
+    align-self: center;
+    width: 800px;
     margin: 50px auto;
+    height: 500px;
     box-shadow: 0 40px 0 var(--third-color);
 
     .slider {
@@ -19,12 +21,23 @@
             height: 500px;
             background: lightgray;
         }
+
+        img {
+            object-fit: cover;
+        }
     }
     
 }
 
+.LeftButton {
+    z-index: 999;
+}
+
 .navigation {
-    background: var(--third-color);
+    height: 50px;
+    position: absolute;
+    transform: translateY(5%) translateX(130%);
+
 
     .navigation__item {
         display: flex;
@@ -35,8 +48,8 @@
 
         button {
             list-style: none;
-            width: 20px;
-            height: 20px;
+            width: 15px;
+            height: 15px;
             background: var(--fifth-color);
             border-radius: 100%;
             cursor: pointer;

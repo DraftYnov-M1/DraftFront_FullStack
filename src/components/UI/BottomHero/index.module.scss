@@ -24,8 +24,11 @@
     }
 
     .wrapper__right {
-        width:20%;
-       
+        width: 380px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
     }
 
 }

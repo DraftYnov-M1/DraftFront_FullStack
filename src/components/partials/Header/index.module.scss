@@ -10,7 +10,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            z-index: 100;
+            z-index: 99999;
             background-color: var(--fifth-color);
             width: 100%;
             transition: all 0.3s ease-in-out;
