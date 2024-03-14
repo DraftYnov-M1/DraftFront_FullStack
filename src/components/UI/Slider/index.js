@@ -26,7 +26,7 @@ const Index = () => {
 
     return (
         <>
-            <button className={styles.LeftButton} onClick={()=>getPrevSlide()}>
+            <button className={styles.leftButton} onClick={()=>getPrevSlide()}>
                 <svg width="58" height="60" viewBox="0 0 58 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="27.5" cy="27.5" r="27" transform="matrix(-1 0 0 1 55 5)" fill="#FF7F7F" stroke="white"/>
                     <g clip-path="url(#clip0_605_48)">
@@ -77,7 +77,7 @@ const Index = () => {
                     </ul>
                 </div>
             </div>
-            <button className={styles.LeftButton} onClick={()=>getNextSlide()}>
+            <button className={styles.rightButton} onClick={()=>getNextSlide()}>
                 <svg width="58" height="60" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="27.5" cy="27.5" r="27" fill="#FF7F7F" stroke="white"/>
                     <g clip-path="url(#clip0_12_88)">

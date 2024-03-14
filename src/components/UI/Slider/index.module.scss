@@ -29,8 +29,13 @@
     
 }
 
-.LeftButton {
+.leftButton {
     z-index: 999;
+}
+
+.rightButton {
+    z-index: 999;
+    transform: translateX(-30px) translateY(5px);
 }
 
 .navigation {
