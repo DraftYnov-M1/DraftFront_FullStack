@@ -17,6 +17,8 @@ export default async function Home() {
 
   const articles = await res.json();
 
+  console.log(Image);
+
   const images = [Image.src, Image.src, Image.src,  Image.src]
 
   return (
