@@ -1,6 +1,7 @@
 import { GET_ARTICLES } from "@/graphql/queries";
 import Link from "next/link";
 import Hero from "@/components/UI/Hero";
+import Button from "@/components/UI/Button";
 import Slider from "@/components/UI/Slider";
 import TitleMain from "@/components/UI/TitleMain";
 import SubTitle from "@/components/UI/SubTitle";
@@ -10,9 +11,7 @@ import Image from "../../public/background_hero.jpg";
 import styles from "./index.module.scss";
 
 export default async function Home({ params, searchParams }) {
-  
-  console.log(searchParams);
-    
+
   const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/graphql`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -76,6 +75,18 @@ export default async function Home({ params, searchParams }) {
               width={330}
             />
           </div>
+        </section>
+      </div>
+      <div className="container">
+        <section className={styles.video__banner}>
+          <div className={styles.content}>
+            <TitleMain title="Subcribe to our newsletter" color="white" />
+            <Button color="primary" text="Subcribe"/>
+          </div>
+          <div className={styles.overlay}></div>
+          <video autoPlay loop muted>
+            <source src="/test.mp4"/>
+          </video>
         </section>
       </div>
     </>
