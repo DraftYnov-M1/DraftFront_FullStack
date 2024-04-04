@@ -1,17 +1,28 @@
 import { GET_ARTICLES } from "@/graphql/queries";
+import Link from "next/link";
 import Hero from "@/components/UI/Hero";
 import Slider from "@/components/UI/Slider";
 import TitleMain from "@/components/UI/TitleMain";
+import SubTitle from "@/components/UI/SubTitle";
+import GridPosts from "@/components/UI/GridPosts";
 import BackgroundHero from "../../public/background_hero.jpg";
 import Image from "../../public/background_hero.jpg";
 import styles from "./index.module.scss";
-export default async function Home() {
 
+export default async function Home({ params, searchParams }) {
+  
+  console.log(searchParams);
+    
   const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/graphql`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      query: GET_ARTICLES
+      query: GET_ARTICLES,
+      variables: {
+        filters: {
+          limit: Number(searchParams.limit) || 6
+        }
+      }
     }),
   });
 
@@ -19,7 +30,9 @@ export default async function Home() {
 
   console.log(Image);
 
-  const images = [Image.src, Image.src, Image.src,  Image.src]
+  const images = [Image.src, Image.src, Image.src, Image.src]
+  
+  const limit = Number(searchParams.limit) || 6;
 
   return (
     <>
@@ -30,6 +43,24 @@ export default async function Home() {
         buttonLink="/"
         buttonText="Discover"
       />
+      <div className="container">
+        <div id="grid">
+          <div className={styles.title__content}>
+            <SubTitle text="Our latest news" color="primary"/>
+            <Link className="btn btn__primary" href="/blog">
+              View more
+            </Link>
+          </div>
+          {
+            articles && <GridPosts articles={articles.data.getArticles} />
+          }
+        </div>
+        <div className={styles.loadmore}>
+          <Link className="btn btn__primary" href={`/?limit=${limit + 6}#grid`}>
+            Load more
+          </Link>
+        </div>
+      </div>
       <div className="container">
         <section className={styles.about__wrapper}>
           <div className={styles.left__part}>
@@ -46,10 +77,6 @@ export default async function Home() {
             />
           </div>
         </section>
-        {/* {
-          articles && <GridPosts articles={articles.data.getArticles} />
-        } */}
-
       </div>
     </>
   )
