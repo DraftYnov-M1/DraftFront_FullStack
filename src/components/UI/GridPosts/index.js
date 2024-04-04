@@ -1,5 +1,5 @@
 import PostItem from "../PostItem/index";
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
 
 const Index = ({ articles }) => {
     return (

@@ -23,60 +23,46 @@ export default async function Home() {
       getArticles: [
         {
           id: 1,
-          title: 'Article 1',
+          title: 'Les Meilleures Pratiques pour la Sécurité des Applications Web',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, libero in fringilla luctus, libero dolor luctus libero, euismod.',
           image: 'https://via.placeholder.com/300',
           date: '2021-08-10T00:00:00Z',
         },
         {
-          id: 1,
-          title: 'Article 1',
+          id: 2,
+          title: 'Conseils pour Optimiser les Performances de Votre Site Web',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, libero in fringilla luctus, libero dolor luctus libero, euismod.',
           image: 'https://via.placeholder.com/300',
           date: '2021-08-10T00:00:00Z',
         },
         {
-          id: 1,
-          title: 'Article 1',
+          id: 3,
+          title: "Les Avancées Récentes dans le Domaine de l'Intelligence Artificielle",
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, libero in fringilla luctus, libero dolor luctus libero, euismod.',
           image: 'https://via.placeholder.com/300',
           date: '2021-08-10T00:00:00Z',
         },
         {
-          id: 1,
-          title: 'Article 1',
+          id: 4,
+          title: 'Les Meilleures Pratiques pour la Sécurité des Applications Web',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, libero in fringilla luctus, libero dolor luctus libero, euismod.',
           image: 'https://via.placeholder.com/300',
           date: '2021-08-10T00:00:00Z',
         },
         {
-          id: 1,
-          title: 'Article 1',
+          id: 5,
+          title: 'Conseils pour Optimiser les Performances de Votre Site Web',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, libero in fringilla luctus, libero dolor luctus libero, euismod.',
           image: 'https://via.placeholder.com/300',
           date: '2021-08-10T00:00:00Z',
         },
         {
-          id: 1,
-          title: 'Article 1',
+          id: 6,
+          title: "Les Avancées Récentes dans le Domaine de l'Intelligence Artificielle",
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, libero in fringilla luctus, libero dolor luctus libero, euismod.',
           image: 'https://via.placeholder.com/300',
           date: '2021-08-10T00:00:00Z',
-        },
-        {
-          id: 1,
-          title: 'Article 1',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, libero in fringilla luctus, libero dolor luctus libero, euismod.',
-          image: 'https://via.placeholder.com/300',
-          date: '2021-08-10T00:00:00Z',
-        },
-        {
-          id: 1,
-          title: 'Article 1',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, libero in fringilla luctus, libero dolor luctus libero, euismod.',
-          image: 'https://via.placeholder.com/300',
-          date: '2021-08-10T00:00:00Z',
-        },
+        }
       ]  
     }
   }
