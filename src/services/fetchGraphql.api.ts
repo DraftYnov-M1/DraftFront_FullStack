@@ -1,4 +1,4 @@
-export const fetchGraphQl = async (resolvers, variables, token) => { 
+export const fetchGraphQl = async (resolvers: any) => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/graphql`, {
         method: 'POST',
         headers: {

@@ -5,13 +5,22 @@ import SubTitle from "@/components/UI/SubTitle";
 import Link from "next/link";
 import styles from "./index.module.scss";
 
-const Index = ({subtitle, title, image, buttonLink, buttonText}) => {
+interface params {
+    subtitle: string;
+    title: string;
+    image: string;
+    buttonLink: string;
+    buttonText: string;
+}
+
+const Index = ({ subtitle, title, image, buttonLink, buttonText }: params) => {
 
     const [heroHeight, setHeroHeight] = useState(0);
 
-    const adjustSize = () => { 
+    const adjustSize = () => {
         const windowHeight = window.innerHeight;
-        const headerHeight = document.querySelector("header").offsetHeight;
+        const headerHeight = document?.querySelector("header")?.offsetHeight;
+        if (!headerHeight) return;
         setHeroHeight(windowHeight - headerHeight);
     }
 
@@ -23,10 +32,10 @@ const Index = ({subtitle, title, image, buttonLink, buttonText}) => {
     }, []);
 
     return (
-        <div className={styles.wrapper} style={{ height: `${heroHeight}px`}}>
+        <div className={styles.wrapper} style={{ height: `${heroHeight}px` }}>
             <div className={styles.content}>
                 <SubTitle text="We talk about" color="white" />
-                <TitleMain title="Cloud Computing" color="white"/ >
+                <TitleMain title="Cloud Computing" color="white" />
                 <Link className="btn btn__primary" href={buttonLink}>
                     {buttonText}
                 </Link>
