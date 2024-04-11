@@ -1,14 +1,20 @@
 import Link from "next/link";
 import styles from "./index.module.scss";
+import { Article } from "@/interfaces/article"
 
-const Index = ({article, position}) => {
+
+interface params {
+    position: number;
+    article: Article;
+}
+const Index = ({ article, position }: params) => {
 
     return (
         <div className={styles.item} key={article.id}>
-                <h3>{(position + 1).toString().padStart(2, "0")}</h3>
-            <div className={styles.content}>                
-                    <p>{article.date}</p>
-                    <h2>{article.title}</h2>
+            <h3>{(position + 1).toString().padStart(2, "0")}</h3>
+            <div className={styles.content}>
+                <p>{article.date}</p>
+                <h2>{article.title}</h2>
             </div>
             <div className={styles.link}>
                 <Link href={`/blog/${article.id}`}>
@@ -23,7 +29,7 @@ const Index = ({article, position}) => {
                             </clipPath>
                         </defs>
                     </svg>
-            </Link>
+                </Link>
             </div>
         </div>
     );
