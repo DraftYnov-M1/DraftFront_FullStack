@@ -4,6 +4,13 @@ import Link from "next/link";
 import articlesService from "@/services/articles.api.js";
 import styles from "./index.module.scss";
 
+interface Iprops {
+    result: {
+        id: string | number;
+        title: string;
+    }
+}
+
 const Index = () => {
 
     const [search, setSearch] = useState("");
@@ -44,7 +51,7 @@ const Index = () => {
                 search.length > 3 && (
                     <div className={styles.results}>
                         {
-                            results && results.length > 0 ? results.map((result) => {
+                            results && results.length > 0 ? results.map((result : Iprops["result"]) => {
                                 return (
                                     <Link
                                         onClick={()=>setSearch('')}

@@ -1,6 +1,11 @@
 import styles from "./index.module.css";
 
-const Index = ({children, onClose}) => {
+interface Iprops {
+    children: React.ReactNode;
+    onClose: () => void;
+}
+
+const Index = ({children, onClose} : Iprops) => {
     return (
         <>
             <div className={styles.overlay} onClick={onClose}></div>

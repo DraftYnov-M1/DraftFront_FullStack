@@ -1,11 +1,16 @@
 import PostItem from "../PostItem/index";
 import styles from "./index.module.css";
+import { Article } from "../../../interfaces/articles";   
 
-const Index = ({ articles }) => {
+interface IProps {
+    articles: Article[];
+}
+
+const Index = ({ articles }: IProps) => {
     return (
         <div className={styles.grid}>
             {
-                articles?.map((article, index) => (
+                articles?.map((article : Article, index : number) => (
                     // on utilise le composant PostItem dans l'itération pour afficher chaque article
                     <PostItem key={article.id} article={article} position={index} />
                 ))

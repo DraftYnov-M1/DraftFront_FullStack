@@ -12,20 +12,69 @@ import styles from "./index.module.scss";
 
 export default async function Home({ params, searchParams }) {
 
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/graphql`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      query: GET_ARTICLES,
-      variables: {
-        filters: {
-          limit: Number(searchParams.limit) || 6
-        }
-      }
-    }),
-  });
+  // const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/graphql`, {
+  //   method: 'POST',
+  //   headers: { 'Content-Type': 'application/json' },
+  //   body: JSON.stringify({
+  //     query: GET_ARTICLES,
+  //     variables: {
+  //       filters: {
+  //         limit: Number(searchParams.limit) || 6
+  //       }
+  //     }
+  //   }),
+  // });
 
-  const articles = await res.json();
+  // const articles = await res.json();
+
+  const articles = {
+    data: {
+      getArticles: [
+        {
+          id: 1,
+          title: 'Les Meilleures Pratiques pour la Sécurité des Applications Web',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, libero in fringilla luctus, libero dolor luctus libero, euismod.',
+          image: 'https://via.placeholder.com/300',
+          date: '2021-08-10T00:00:00Z',
+        },
+        {
+          id: 2,
+          title: 'Conseils pour Optimiser les Performances de Votre Site Web',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, libero in fringilla luctus, libero dolor luctus libero, euismod.',
+          image: 'https://via.placeholder.com/300',
+          date: '2021-08-10T00:00:00Z',
+        },
+        {
+          id: 3,
+          title: "Les Avancées Récentes dans le Domaine de l'Intelligence Artificielle",
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, libero in fringilla luctus, libero dolor luctus libero, euismod.',
+          image: 'https://via.placeholder.com/300',
+          date: '2021-08-10T00:00:00Z',
+        },
+        {
+          id: 4,
+          title: 'Les Meilleures Pratiques pour la Sécurité des Applications Web',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, libero in fringilla luctus, libero dolor luctus libero, euismod.',
+          image: 'https://via.placeholder.com/300',
+          date: '2021-08-10T00:00:00Z',
+        },
+        {
+          id: 5,
+          title: 'Conseils pour Optimiser les Performances de Votre Site Web',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, libero in fringilla luctus, libero dolor luctus libero, euismod.',
+          image: 'https://via.placeholder.com/300',
+          date: '2021-08-10T00:00:00Z',
+        },
+        {
+          id: 6,
+          title: "Les Avancées Récentes dans le Domaine de l'Intelligence Artificielle",
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, libero in fringilla luctus, libero dolor luctus libero, euismod.',
+          image: 'https://via.placeholder.com/300',
+          date: '2021-08-10T00:00:00Z',
+        }
+      ]  
+    }
+  };
 
   console.log(Image);
 

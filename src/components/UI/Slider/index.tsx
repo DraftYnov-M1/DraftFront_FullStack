@@ -42,7 +42,7 @@ const Index = ({images, width} : Iprops) => {
             <div className={styles.slider__wrapper}>
                 <div className={styles.slider} style={{ transform: `translateX(${translateValue}px)` }}>
                     {
-                        images.map((image, index) => {
+                        images.map((image : string , index : number) => {
                             return (
                                 <div data-index={index} key={index} className={styles.slide} style={{width: `${width}px`}}>
                                     <img src={image} alt="image" />
@@ -72,18 +72,17 @@ const Index = ({images, width} : Iprops) => {
                 <ul className={styles.dots__list}>
                     {
                         images.map((dot, index) => (
-                            <li
-                                key={index}
-                                onClick={
-                                    () => {
-                                        setCurrentSlide(index);
-                                        setTranslateValue(index * -width)
-                                    }
-                                }
-                                className={`${styles.dot__item} ${currentSlide == index && styles.active}`}>
-                                {/* <button
-                                ></button> */}
-                            </li>
+                            <button
+                                key={`dot-${index}`}
+                                onClick={() => {
+                                    setCurrentSlide(index);
+                                    setTranslateValue(index * -width);
+                                }}
+                                className={`${styles.dot__item} ${currentSlide === index && styles.active}`}
+                                tabIndex={0}
+                            >
+                                {/* <button></button> */}
+                            </button>
                         ))
                     }
                 </ul>
