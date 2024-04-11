@@ -23,7 +23,6 @@ const Index = () => {
     }, []);
 
     return (
-        <>
         <header className={`${styles.header__main} ${isFixed ? styles.fixed : ""}`}>
                 <div className={styles.header__left}>
                     <SearchInput/>
@@ -52,7 +51,6 @@ const Index = () => {
                     </div>
                 </div>
         </header>
-        </>
     );
 }
 

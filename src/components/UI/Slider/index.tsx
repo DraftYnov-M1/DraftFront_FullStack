@@ -1,9 +1,13 @@
 'use client';
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styles from "./index.module.scss";
 
-const Index = ({images, width}) => {
+interface Iprops {
+    images: Array<string>;
+    width: number;
+}
 
+const Index = ({images, width} : Iprops) => {
 
     const [translateValue, setTranslateValue] = useState(0);
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -77,8 +81,8 @@ const Index = ({images, width}) => {
                                     }
                                 }
                                 className={`${styles.dot__item} ${currentSlide == index && styles.active}`}>
-                                <button
-                                ></button>
+                                {/* <button
+                                ></button> */}
                             </li>
                         ))
                     }

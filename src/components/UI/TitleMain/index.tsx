@@ -1,6 +1,12 @@
 import styles from "./index.module.scss";
 
-const Index = ({title, color, withUnderline}) => {
+interface Ipros {
+    title: string;
+    color: string;
+    withUnderline: boolean | string;
+}
+
+const Index = ({title, color, withUnderline}: Ipros) => {
     return (
         // <div className={`${styles.wrapper} ${styles[color]}`}>
         <div className={`${styles.wrapper} text__${color} ${withUnderline && styles.underlined}`}>

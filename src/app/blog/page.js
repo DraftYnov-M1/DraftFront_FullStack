@@ -13,27 +13,27 @@ const Page = () => {
         limit: 6
     });
 
-    const fetchArticles = async () => {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/graphql`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                query: GET_ARTICLES,
-                variables: {
-                    filters: {
-                        limit: Number(filters.limit) || 6
-                    }
-                }
-            }),
-        });
-        const articles = await res.json();
-        setArticles(articles);
-    }
+    // const fetchArticles = async () => {
+    //     const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/graphql`, {
+    //         method: 'POST',
+    //         headers: { 'Content-Type': 'application/json' },
+    //         body: JSON.stringify({
+    //             query: GET_ARTICLES,
+    //             variables: {
+    //                 filters: {
+    //                     limit: Number(filters.limit) || 6
+    //                 }
+    //             }
+    //         }),
+    //     });
+    //     const articles = await res.json();
+    //     setArticles(articles);
+    // }
 
     useEffect(() => {
         // console.log(filters);
         // console.log(articles.data.getArticles.length)
-        fetchArticles();
+        // fetchArticles();
     }, [filters]);
 
     return (

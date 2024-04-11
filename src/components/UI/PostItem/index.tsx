@@ -1,7 +1,13 @@
 import Link from "next/link";
 import styles from "./index.module.scss";
+import { Article } from "@/interfaces/articles";
 
-const Index = ({article, position}) => {
+interface Ipros {
+    article: Article,
+    position: number
+}
+
+const Index = ({article, position}: Ipros) => {
 
     return (
         <div className={styles.item} key={article.id}>

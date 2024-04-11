@@ -29,25 +29,23 @@ export default async function Home({ params, searchParams }) {
   const limit = Number(searchParams.limit) || 6;
 
   return (
-    <>
-      <div className="container">
-        <div id="grid">
-          <div className={styles.title__content}>
-            <SubTitle text="Our latest news" color="primary"/>
-            <Link className="btn btn__primary" href="/blog">
-              View more
-            </Link>
-          </div>
-          {
-            articles && <GridPosts articles={articles.data.getArticles} />
-          }
-        </div>
-        <div className={styles.loadmore}>
-          <Link className="btn btn__primary" href={`/?limit=${limit + 6}#grid`}>
-            Load more
+    <div className="container">
+      <div id="grid">
+        <div className={styles.title__content}>
+          <SubTitle text="Our latest news" color="primary"/>
+          <Link className="btn btn__primary" href="/blog">
+            View more
           </Link>
         </div>
+        {
+          articles && <GridPosts articles={articles.data.getArticles} />
+        }
       </div>
-    </>
+      <div className={styles.loadmore}>
+        <Link className="btn btn__primary" href={`/?limit=${limit + 6}#grid`}>
+          Load more
+        </Link>
+      </div>
+    </div>
   )
 }
