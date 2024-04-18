@@ -2,18 +2,14 @@
 import { useState } from "react";
 import Button from "@/components/UI/Button";
 import Input from "@/components/UI/Input";
-import { REGISTER_USER } from "@/graphql/mutations";
 import { fetchGraphQl } from "@/services/fetchGraphql.api";
 import TitleMain from "@/components/UI/TitleMain";
 import styles from "./index.module.scss";
 
 const Page = () => {
-
 	const [form, setForm] = useState({
 		mail: "",
-		password: "",
-		firstName: "",
-		lastName: "",
+		password: ""
     });
     
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,17 +18,6 @@ const Page = () => {
     
     const submitForm = () => {
         console.log(form);
-		fetchGraphQl(REGISTER_USER, { user: form }, "")
-			.then((res) => {
-				// si res.registerUser.
-				// alors on stock le token en cookies
-				// et on redirige vers account/profil
-				// sinon on affiche un message d'erreur
-                console.log(res);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
     }
 	return (
         <div className={styles.wrapper}>
@@ -57,21 +42,7 @@ const Page = () => {
 					name="password"
 					handleChange={handleChange}
 				/>
-				<Input
-					label="FirstName"
-					name="firstName"
-					type="text"
-					value={form.firstName}
-					handleChange={handleChange}
-				/>
-				<Input
-					label="LastName"
-					type="text"
-					name="lastName"
-					value={form.lastName}
-					handleChange={handleChange}
-				/>
-				<Button type="submit" text="register" color="primary" />
+				<Button type="submit" text="login" color="primary" />
 			</form>
 		</div>
 	);

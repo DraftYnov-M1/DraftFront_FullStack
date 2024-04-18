@@ -1,3 +1,5 @@
+"use client";
+
 interface IProps {
     handleClick?: () => void;
     text: string;
