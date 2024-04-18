@@ -5,12 +5,17 @@ import articlesService from "@/services/articles.api";
 import TitleArticle from "@/components/article/TitleArticle";
 import DescriptionArticle from "@/components/article/DescriptionArticle";
 import DateArticle from "@/components/article/DateArticle";
-
+import { Article } from "@/interfaces";
 const Page = () => {
 
     const params = useParams()
-    const [article, setArticle] = useState(null);
-    const [loading, isLoading] = useState(false);
+    const [article, setArticle] = useState<Article>({
+        id: 0,
+        title: "",
+        date: "",
+        description: "",
+    });
+    const [loading, isLoading] = useState<boolean>(false);
 
     useEffect(() => { 
         isLoading(true);

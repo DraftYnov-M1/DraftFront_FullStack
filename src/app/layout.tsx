@@ -10,15 +10,17 @@ const poppins = Poppins(
   },
 )
 
-export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body className={`${poppins.className}`}>
-        <Header />
-        <main>
-          {children}
-        </main>
-      </body>
-    </html>
-  )
+interface IProps {
+  children: React.ReactNode;
+}
+
+export default function RootLayout({ children }: IProps) {
+	return (
+		<html lang="en">
+			<body className={`${poppins.className}`}>
+				<Header />
+				<main>{children}</main>
+			</body>
+		</html>
+	);
 }

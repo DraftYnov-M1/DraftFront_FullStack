@@ -10,7 +10,13 @@ import BackgroundHero from "../../public/background_hero.jpg";
 import Image from "../../public/background_hero.jpg";
 import styles from "./index.module.scss";
 
-export default async function Home({ params, searchParams }) {
+interface searchParams {
+  searchParams: {
+    limit: string;
+  }
+}
+
+export default async function Home({ searchParams }: searchParams) {
 
   const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/graphql`, {
     method: 'POST',

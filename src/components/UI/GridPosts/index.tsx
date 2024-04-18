@@ -1,7 +1,12 @@
 import PostItem from "../PostItem/index";
+import { Article } from "@/interfaces";
 import styles from "./index.module.css";
 
-const Index = ({ articles }) => {
+interface IProps {
+	articles: Article[];
+}
+
+const Index = ({ articles }:IProps) => {
     return (
         <div className={styles.grid}>
             {

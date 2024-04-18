@@ -9,7 +9,13 @@ export const metadata = {
   description: 'test descriptiion',
 }
 
-export default async function Home({ params, searchParams }) {
+interface searchParams {
+  searchParams: {
+    limit: string;
+  }
+}
+
+export default async function Home({ searchParams }: searchParams) {
   
   const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/graphql`, {
     method: 'POST',

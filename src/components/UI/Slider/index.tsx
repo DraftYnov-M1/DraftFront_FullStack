@@ -2,8 +2,12 @@
 import { useState, useEffect } from "react";
 import styles from "./index.module.scss";
 
-const Index = ({images, width}) => {
+interface IProps {
+    images: string[];
+    width: number;
+}
 
+const Index = ({ images, width }: IProps) => {
 
     const [translateValue, setTranslateValue] = useState(0);
     const [currentSlide, setCurrentSlide] = useState(0);
