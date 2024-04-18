@@ -1,0 +1,38 @@
+.header__main {
+    height: 48px;
+    padding: 20px ;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 15px;
+        color: var(--color-primary);
+    }
+
+    .circle {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: var(--primary-font-color);
+    }
+    
+    h1{
+        text-decoration: none;
+    }
+
+    .icons_cont {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 18px;
+
+        .icon {
+            height: 18px;
+        }
+    }
+}

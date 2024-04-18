@@ -1,14 +1,17 @@
 import Link from "next/link";
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
+import Image from "next/image";
+import img from "@/assets/arrow.png"
 
 const Index = ({article}) => {
 
     return (
-        <div className={styles.item} key={article.id}>
-            <Link href={`/blog/${article.id}`}>
-                <h2>{article.title}</h2>
+            <Link className={`${styles.item}`} key={article.id} href={`/blog/${article.id}`}>
+                <p>{article.date}</p>
+                <h3>{article.title}</h3>
+                <a>{article.id}</a>
+                <Image className={`${styles.arrow}`} src={img}/>
             </Link>
-        </div>
     );
 }
 

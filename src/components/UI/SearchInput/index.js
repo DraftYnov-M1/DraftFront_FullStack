@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import articlesService from "@/services/articles.api.js";
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
 
 const Index = () => {
 

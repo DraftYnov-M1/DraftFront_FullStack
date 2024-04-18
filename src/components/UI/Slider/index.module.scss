@@ -1,0 +1,55 @@
+.wrapper {
+    position: relative;
+    height: 568px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    .background {
+        background-color: var(--third-color);
+        width: 330px;
+        height: 518px;
+        border-radius: 165px;
+        z-index: 0;
+    }
+    .swipeLeft {
+        width: 55px;
+        height: 55px;
+        background-color: var(--third-color);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 50%;
+        left: 0px;
+        transform: translateX(-50%);
+        z-index: 1000;
+    }
+    .swipeRight {
+        width: 55px;
+        height: 55px;
+        background-color: var(--third-color);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 50%;
+        right: 0px;
+        transform: translateX(50%);
+        z-index: 1000;
+
+        .image {
+            transform: rotate(180deg);
+        }
+    }
+    .img {
+        position: absolute;
+        width: 330px;
+        height: 518px;
+        border-radius: 165px;
+        background-color: blue;
+        z-index: 1;
+        top: 0;
+    }
+}

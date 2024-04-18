@@ -1,0 +1,40 @@
+.wrapper {
+    display: flex;
+    width: 120px;
+    height: 34px;
+    padding: 10px;
+    position: relative;
+    border-radius: 40px;
+    background-color: var(--button-color);
+}
+
+.wrapper svg{
+    width: 20px;
+    margin-right: 10px;
+}
+
+.wrapper input {
+    border: none;
+}
+.wrapper input:focus {
+    outline: none;
+}
+.results {
+    position: absolute;
+    max-height: 150px;
+    overflow: scroll;
+    left: 0px;
+    left: 0px;
+    top: 50px;
+    background: white;
+    padding: 10px;
+    width: 100%;
+}
+
+.results a {
+    color: inherit;
+}
+
+.results p {
+    font-size: 12px;
+}

@@ -1,8 +1,8 @@
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
 
-const Index = ({title}) => {
+const Index = ({title, color}) => {
     return (
-        <div className={styles.wrapper}>
+        <div className={`${styles.wrapper} text__${color}`}>
             <h2>{title}</h2>
         </div>
     );
