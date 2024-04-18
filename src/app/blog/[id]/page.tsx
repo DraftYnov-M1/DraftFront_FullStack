@@ -5,16 +5,24 @@ import articlesService from "@/services/articles.api";
 import TitleArticle from "@/components/article/TitleArticle";
 import DescriptionArticle from "@/components/article/DescriptionArticle";
 import DateArticle from "@/components/article/DateArticle";
+import { Article } from "@/interfaces/articles";
 
 const Page = () => {
 
     const params = useParams()
-    const [article, setArticle] = useState(null);
-    const [loading, isLoading] = useState(false);
+    // const [article, setArticle] = useState<Article | null>(null); ou
+    const [article, setArticle] = useState<Article>({
+        id: 0,
+        date: '',
+        title: '',
+        description: '',
+        image: ''
+    });
+    const [loading, isLoading] = useState<boolean>(false);
 
     useEffect(() => { 
         isLoading(true);
-        articlesService.getArticle(params.id).then(data => {
+        articlesService.getArticle(Number(params.id)).then(data => {
             setArticle(data.results);
         })
         .catch(err => console.log(err))

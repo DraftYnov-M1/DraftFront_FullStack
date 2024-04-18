@@ -3,7 +3,7 @@ import styles from "./index.module.css";
 import { Article } from "../../../interfaces/articles";   
 
 interface IProps {
-    articles: Article[];
+    articles: Array<Article>    ;
 }
 
 const Index = ({ articles }: IProps) => {

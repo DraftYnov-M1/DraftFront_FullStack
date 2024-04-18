@@ -1,6 +1,10 @@
 import React from 'react';
 
-const Index = ({description}) => {
+interface IProps {
+    description: string;
+}
+
+const Index = ({description} : IProps) => {
     return (
         <div>
             <p>{description}</p>

@@ -3,7 +3,7 @@ import styles from "./index.module.scss";
 interface IProps {
     title: string;
     color: string;
-    withUnderline: boolean; 
+    withUnderline?: boolean; 
 }
 
 const Index = ({title, color, withUnderline}: IProps) => {
