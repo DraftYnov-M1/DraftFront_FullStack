@@ -9,12 +9,13 @@ const Index = () => {
     const [isFixed, setIsFixed] = useState(false);
 
     useEffect(() => { 
-        window.addEventListener("scroll", (e) => {
+        window.addEventListener("scroll", () => {
 
             if (window.scrollY > 150) {
                 setIsFixed(true);
                 // document.querySelector("header").classList.add(styles.fixed);
             }
+
             else {
                 setIsFixed(false);
                 // document.querySelector("header").classList.remove(styles.fixed);

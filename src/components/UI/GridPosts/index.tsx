@@ -1,4 +1,5 @@
 import PostItem from "../PostItem/index";
+import { Article } from "@/interfaces";
 import styles from "./index.module.css";
 import { Article } from "../../../interfaces/articles";   
 

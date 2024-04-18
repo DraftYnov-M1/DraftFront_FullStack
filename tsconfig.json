@@ -32,6 +32,6 @@
 		"src/hooks/useInView.tsx",
 		"src/pages/_document.js",
 		".next/types/**/*.ts"
-	],
+, "src/components/UI/Input/index.tsx"	],
 	"exclude": ["node_modules"]
 }

@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "ts:watch": "tsc -w"
+    "ts:watch": "tsc --watch"
   },
   "dependencies": {
     "next": "13.5.6",
