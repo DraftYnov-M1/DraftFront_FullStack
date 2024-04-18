@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import articlesService from "@/services/articles.api.js";
+import articlesService from "@/services/articles.api";
 import styles from "./index.module.scss";
 
 interface Iprops {
