@@ -1,6 +1,11 @@
 export interface Article {
-	id: number;
-	title: string;
-    date: string;
-    description: string;
-}
+    id: number | string,
+    date:  string,
+    title: string,
+    description: string,
+    image?: string
+};
+
+export interface User {
+
+};

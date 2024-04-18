@@ -5,7 +5,7 @@ import articlesService from "@/services/articles.api";
 import TitleArticle from "@/components/article/TitleArticle";
 import DescriptionArticle from "@/components/article/DescriptionArticle";
 import DateArticle from "@/components/article/DateArticle";
-import { Article } from "@/interfaces/articles";
+import { Article } from "@/interfaces";
 
 const Page = () => {
 

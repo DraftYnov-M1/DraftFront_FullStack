@@ -6,7 +6,7 @@ import GridPosts from "@/components/UI/GridPosts";
 import Button from "@/components/UI/Button";
 import SubTitle from "@/components/UI/SubTitle";
 import styles from "./index.module.scss";
-import { Article } from "@/interfaces/articles";
+import { Article } from "@/interfaces";
 
 const Page = () => {
 

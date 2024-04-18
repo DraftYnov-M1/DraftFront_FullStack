@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "./index.module.scss";
-import { Article } from "@/interfaces/articles";
+import { Article } from "@/interfaces";
 
 interface Ipros {
     article: Article,

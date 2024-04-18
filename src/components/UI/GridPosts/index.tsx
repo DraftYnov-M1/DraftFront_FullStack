@@ -1,7 +1,6 @@
 import PostItem from "../PostItem/index";
 import { Article } from "@/interfaces";
 import styles from "./index.module.css";
-import { Article } from "../../../interfaces/articles";   
 
 interface IProps {
     articles: Array<Article>    ;

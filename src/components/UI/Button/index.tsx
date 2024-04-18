@@ -4,13 +4,7 @@ interface IProps {
     handleClick?: () => void;
     text: string;
     color?: string;
-    type?: ButtonType;
-};
-
-enum ButtonType {
-    button = 'button',
-    submit = 'submit',
-    reset = 'reset',
+    type?: "submit" | "button" | "reset";
 };
 
 const Index = ({handleClick, text, color, type} : IProps) => {
