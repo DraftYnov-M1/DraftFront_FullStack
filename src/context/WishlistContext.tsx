@@ -1,40 +1,41 @@
 'use client';
-
 import { createContext, useState } from 'react';
-import { Article } from '@/interfaces/index';
+import { Article } from "@/interfaces/";
 
-interface IProps {
+interface ContextProps {
     children: React.ReactNode;
-};
+}
 
-type ContextType = {
+type context = {
     articles: Article[];
 }
 
-const WishlistContext = createContext<ContextType>({
-    articles: [],
+const WishlistContext = createContext<context>({
+    articles : []
 });
 
-export const WishlistContextProvider = ({children} : IProps) => {
+export default WishlistContext;
+
+export const WishlistContextProvider = ({ children }: ContextProps) => {
     const [articles, setArticles] = useState<Article[]>([]);
 
-    const addArticle = (article : Article) => {
+    const addProduct = (article: Article) => {
         setArticles([...articles, article]);
     };
-
-    const removeArticle = (article : Article) => {
+    
+    const removeProduct = (article: Article) => {
         setArticles(articles.filter((item) => item.id !== article.id));
     };
 
     const context = {
         articles,
-        addArticle,
-        removeArticle,
+        addProduct,
+        removeProduct,
     };
 
     return (
-        <WishlistContext.Provider value={context}>
-            {children}
+        <WishlistContext.Provider value= { context } >
+            { children }
         </WishlistContext.Provider>
-    );
-};
+		);
+}

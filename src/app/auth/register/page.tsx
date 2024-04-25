@@ -1,8 +1,9 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Button from "@/components/UI/Button";
 import Input from "@/components/UI/Input";
-import { useRouter } from "next/navigation";
+import TitleMain from "@/components/UI/TitleMain";
 import styles from "./index.module.scss";
 
 const Page = () => {
@@ -12,7 +13,8 @@ const Page = () => {
 		password: "",
 		firstName: "",
 		lastName: "",
-	});
+    });
+    
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setForm({ ...form, [e.target.name]: e.target.value });
     };
@@ -39,7 +41,8 @@ const Page = () => {
         
     }
 	return (
-		<div className={styles.wrapper}>
+        <div className={styles.wrapper}>
+            <TitleMain title="Register" color="primary" />
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
@@ -81,4 +84,3 @@ const Page = () => {
 };
 
 export default Page;
-

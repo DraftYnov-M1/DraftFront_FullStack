@@ -1,3 +1,6 @@
+"use client";
+import styles from "./index.module.scss";
+
 interface IProps {
     value: string;
     type: string;
@@ -14,7 +17,7 @@ const Index = ({
     label
 }: IProps) => {
     return (
-        <div>
+        <div className={styles.wrapper}>
             <label>{label}</label>
             <input
                 type={type}
