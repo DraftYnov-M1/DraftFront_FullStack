@@ -11,7 +11,15 @@ export async function POST(request : Request) {
         console.log(data);
         
         if(data?.data?.registerUser?.token){
-            cookies().set("token", data.data.registerUser.token);
+            cookies().set({
+                name : "token", 
+                value : data.data.registerUser.token,
+                maxAge : 60 * 60 * 24 * 7, // 1 week
+                path : "/",
+                httpOnly : true,
+                // secure : true, // uncomment for production only - https protocol
+            });
+
             return NextResponse.json({
                 success: true,
                 message: "Register success",
