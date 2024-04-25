@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { cookies } from 'next/headers';
 import { fetchGraphQl } from './services/fetchGraphql.api';
+import { GET_ME } from '@/graphql/mutation';
  
 // This function can be marked `async` if using `await` inside
 export async function middleware(request: NextRequest) {
@@ -12,7 +13,7 @@ export async function middleware(request: NextRequest) {
   if(!token) {
     return NextResponse.redirect(new URL('/auth/login', request.url).toString());
   } else {
-    const me = await fetchGraphQl('query {me {id}}', {}, `Bearer ${token.value}`);
+    const me = await fetchGraphQl(GET_ME, {}, `Bearer ${token.value}`);
     console.log(me);
     if(me?.data?.getMe) {
       return NextResponse.next();

@@ -1,15 +1,16 @@
 export const REGISTER_USER = `
     mutation RegisterUser($user: UserInput!) {
         registerUser(user: $user) {
-        token
+            token
         }
     }
 `
 
-export const GET_USER = `
+export const GET_ME = `
     mutation GetMe{
         getMe{
             token
         }
     }
 `
+
