@@ -3,7 +3,7 @@ export const fetchGraphQl = async (resolvers: string, variables: any, token: str
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'token': token || 'null'
+            'Authorization': token || 'null'
         },
         body: JSON.stringify({
             query: resolvers,

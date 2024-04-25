@@ -1,13 +1,14 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Button from "@/components/UI/Button";
 import Input from "@/components/UI/Input";
-import { REGISTER_USER } from "@/graphql/mutations";
-import { fetchGraphQl } from "@/services/fetchGraphql.api";
 import TitleMain from "@/components/UI/TitleMain";
 import styles from "./index.module.scss";
 
 const Page = () => {
+
+	const router = useRouter();
 
 	const [form, setForm] = useState({
 		mail: "",
@@ -20,20 +21,27 @@ const Page = () => {
 		setForm({ ...form, [e.target.name]: e.target.value });
     };
     
-    const submitForm = () => {
-        console.log(form);
-		fetchGraphQl(REGISTER_USER, { user: form }, "")
-			.then((res) => {
-				// si res.registerUser.
-				// alors on stock le token en cookies
-				// et on redirige vers account/profil
-				// sinon on affiche un message d'erreur
-                console.log(res);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    }
+    const submitForm = async () => {
+		try {
+			const res = await fetch('/api/auth/register', {
+				method: 'POST',
+				body: JSON.stringify(form),
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			});
+			const data = await res.json();
+			console.log(data);
+			if (data?.success) {
+				router.push('/account/profil');					
+			} 
+		}
+		catch (err) {
+			console.log(err);
+		}
+		
+	}
+	
 	return (
         <div className={styles.wrapper}>
             <TitleMain title="Register" color="primary" />

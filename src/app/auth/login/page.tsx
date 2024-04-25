@@ -7,6 +7,8 @@ import TitleMain from "@/components/UI/TitleMain";
 import styles from "./index.module.scss";
 
 const Page = () => {
+
+
 	const [form, setForm] = useState({
 		mail: "",
 		password: ""
