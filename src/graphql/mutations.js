@@ -9,7 +9,10 @@ export const REGISTER_USER = `
 export const GET_ME = `
     mutation GetMe {
         getMe {
-            id
+            id,
+            firstName,
+            lastName,
+            mail,
         }
     }
 ` 
