@@ -15,7 +15,10 @@ export const LOGIN_USER = `
 export const GET_ME = `
     mutation GetMe{
         getMe{
-            token
+            id,
+            mail,
+            firstName,
+            lastName,
         }
     }
 `

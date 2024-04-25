@@ -2,7 +2,7 @@ import styles from "./index.module.scss";
 
 interface IProps {
     title: string;
-    color: string;
+    color?: string;
     withUnderline?: boolean; 
 }
 
