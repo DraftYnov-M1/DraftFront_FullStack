@@ -2,11 +2,11 @@
 import { useState } from "react";
 import Button from "@/components/UI/Button";
 import Input from "@/components/UI/Input";
-import { REGISTER_USER } from "@/graphql/mutations";
-import { fetchGraphQl } from "@/services/fetchGraphql.api";
+import { useRouter } from "next/navigation";
 import styles from "./index.module.scss";
 
 const Page = () => {
+	const router = useRouter();
 	const [form, setForm] = useState({
 		mail: "",
 		password: "",
@@ -17,15 +17,26 @@ const Page = () => {
 		setForm({ ...form, [e.target.name]: e.target.value });
     };
     
-    const submitForm = () => {
+    const submitForm = async () => {
         console.log(form);
-        fetchGraphQl(REGISTER_USER, {user:form}, "")
-            .then((res) => {
-                console.log(res);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+
+		try {
+			const res = await fetch('/api/auth/register', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(form),
+			});
+			const data = await res.json();
+			console.log(data);
+			if(data?.success){
+				router.push('/account/profil');
+			}
+		} catch (e) {
+			console.error('Unabled to register, an error occurred: ', e);
+		}
+        
     }
 	return (
 		<div className={styles.wrapper}>

@@ -5,3 +5,11 @@ export const REGISTER_USER = `
         }
     }
 `
+
+export const GET_USER = `
+    mutation GetMe{
+        getMe{
+            token
+        }
+    }
+`
