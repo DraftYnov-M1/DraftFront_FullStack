@@ -1,37 +1,40 @@
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
-
+import { fetchGraphQl } from "@/services/fetchGraphql.api";
+import { LOGIN_USER } from "@/graphql/mutations";
 
 export async function POST(request : Request) {
     try {
-        const {email, password} = await request.json();
-       
-        const response = await fetch(
-            `${process.env.NEXT_PUBLIC_BACKEND_API}/auth/login`,
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "Application/json",
-                },
-                body: JSON.stringify({
-                    email: email,
-                    password: password,
-                }),
-            }
-        );
-        const data = await response.json();
+        const body = await request.json();
+        console.log(body);
+        const data = await fetchGraphQl(LOGIN_USER, {user:body}, "");
+        console.log(data);
 
-        if(data && data.code===200){
-            cookies().set("token", data.data);
+        if (data?.data?.loginUser?.token) {
+            cookies().set({
+                name : "token", 
+                value : data.data.loginUser.token,
+                maxAge : 60 * 60 * 24 * 7, // 1 week
+                path : "/",
+                httpOnly : true,
+                // secure : true, // uncomment for production only - https protocol
+            });
+
             return NextResponse.json({
-                success:true,
+                success: true,
                 message: "Login success",
             });
         }
-        else{
-            console.error(data.message);
-        }
+        return NextResponse.json({
+            success:false,
+            message: "Login failed",
+        });
+
     } catch (e) {
         console.error("Unabled to login, an error occurred: ", e);
+        return NextResponse.json({
+            success: false,
+            message: "Unabled to login, an error occurred: " + e
+        });
     }
 };
