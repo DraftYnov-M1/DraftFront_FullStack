@@ -1,5 +1,6 @@
 import Header from '@/components/partials/Header';
-import {Poppins } from 'next/font/google'
+import { Poppins } from 'next/font/google';
+import {WishlistContextProvider} from '@/context/WishlistContext';
 import '@/assets/css/globals.scss';
 
 // const syne = Syne({ subsets: ['latin'] })
@@ -18,8 +19,10 @@ export default function RootLayout({ children }: IProps) {
 	return (
 		<html lang="en">
 			<body className={`${poppins.className}`}>
-				<Header />
-				<main>{children}</main>
+				<WishlistContextProvider>
+					<Header />
+					<main>{children}</main>
+				</WishlistContextProvider>
 			</body>
 		</html>
 	);
