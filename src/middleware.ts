@@ -7,6 +7,7 @@ export function middleware(request: NextRequest) {
     url.pathname = "/auth/login";
     let cookie = request.cookies.get('token') || undefined;
     if (!cookie) {
+        // verify the token valid 
         return NextResponse.redirect(url.toString());
     }
     else {
