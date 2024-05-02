@@ -28,8 +28,6 @@ export const WishlistContextProvider = ({ children }: ContextProps) => {
         } else {
             localStorage.setItem('wishlist', JSON.stringify(articles));
         }
-
-
     }, []);
 
 
