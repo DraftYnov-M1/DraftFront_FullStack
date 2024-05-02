@@ -8,10 +8,14 @@ interface ContextProps {
 
 type context = {
     articles: Article[];
+    addArticle: (article: Article) => void;
+    removeProduct: (article: Article) => void;
 }
 
 const WishlistContext = createContext<context>({
-    articles : []
+    articles : [],
+    addArticle: () => {},
+    removeProduct: () => {},
 });
 
 export default WishlistContext;
