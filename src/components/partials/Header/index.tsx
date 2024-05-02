@@ -10,8 +10,6 @@ const Index = () => {
     const [isFixed, setIsFixed] = useState(false);
     const { articles } = useContext(WishlistContext);
     
-    console.log(articles);
-
     useEffect(() => { 
         window.addEventListener("scroll", () => {
 
