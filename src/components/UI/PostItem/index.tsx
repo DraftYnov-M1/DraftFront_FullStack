@@ -1,6 +1,9 @@
+'use client';
 import Link from "next/link";
-import styles from "./index.module.scss";
+import { useContext } from "react";
+import WishlistContext from "@/context/WishlistContext";
 import { Article } from "@/interfaces";
+import styles from "./index.module.scss";
 
 interface Iprops {
 	position: number;
@@ -9,9 +12,16 @@ interface Iprops {
 
 const Index = ({article, position}: Iprops) => {
 
+    const { addArticle } = useContext(WishlistContext);
+
     return (
         <div className={styles.item} key={article.id}>
-                <h3>{(position + 1).toString().padStart(2, "0")}</h3>
+            <button
+                onClick={()=>addArticle(article)}
+            >
+                Add to wishlist
+            </button>
+            <h3>{(position + 1).toString().padStart(2, "0")}</h3>
             <div className={styles.content}>                
                     <p>{article.date}</p>
                     <h2>{article.title}</h2>
